@@ -1,0 +1,5 @@
+class ClassComponent extends Component {
+  render() {
+    return <div>Example</div>
+  }
+}
