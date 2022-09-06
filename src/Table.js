@@ -10,37 +10,32 @@ const TableHeader = () => {
   }
 
 
-  const TableBody = () => {
-    return (
-      <tbody>
-        <tr>
-          <td>Jack</td>
-          <td>Drawing</td>
+  const TableBody = (props) => {
+    const rows = props.characterData.map((row, index) => {
+      return (
+        <tr key={index}>
+          <td>{row.name}</td>
+          <td>{row.hobby}</td>
         </tr>
-        <tr>
-          <td>John</td>
-          <td>Travelling</td>
-        </tr>
-        <tr>
-          <td>Monica</td>
-          <td>Acting</td>
-        </tr>
-        <tr>
-          <td>James</td>
-          <td>Singing</td>
-        </tr>
-      </tbody>
-    )
-  } 
+      )
+    })
+  
+    return <tbody>{rows}</tbody>
+  }
 
 
   class Table extends Component {
     render() {
+
+        const { charData } = this.props
+
       return (
         <table>
           <TableHeader />
-          <TableBody />
+          <TableBody charData={charData}/>
         </table>
       )
     }
   }
+
+  export default Table

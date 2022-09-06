@@ -3,9 +3,31 @@ import Table from './Table'
 
 class App extends Component {
     render() {
+
+        const characters = [
+            {
+              name: 'Jack',
+              job: 'Drawing',
+            },
+            {
+              name: 'John',
+              job: 'Travelling',
+            },
+            {
+              name: 'Monica',
+              job: 'Acting',
+            },
+            {
+              name: 'James',
+              job: 'Singing',
+            },
+          ]
+
+
+
       return (
-        <div className="App">
-          <Table />
+        <div className="container">
+          <Table charData={characters}/>
           </div>
       )
     }
